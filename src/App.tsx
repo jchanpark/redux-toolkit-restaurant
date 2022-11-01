@@ -9,7 +9,13 @@ function App() {
 
   const [reservationNameInput, setReservationNameInput] = useState("");
 
-  const reservations = useSelector((state: RootState) => state.reservations.value)
+  const reservations = useSelector(
+    (state: RootState) => state.reservations.value
+  );
+
+  const customers = useSelector(
+    (state: RootState) => state.customers.value
+  );
 
   // We have to dispatch actions
   const dispatch = useDispatch();
@@ -40,16 +46,7 @@ function App() {
           </div>
         </div>
         <div className="customer-food-container">
-          <div className="customer-food-card-container">
-            <p>Ashely Breton</p>
-            <div className="customer-foods-container">
-              <div className="customer-food"></div>
-              <div className="customer-food-input-container">
-                <input/>
-                <button>Add</button>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
