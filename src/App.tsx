@@ -18,7 +18,7 @@ function App() {
     if(!reservationNameInput) return;
     dispatch(addReservation(reservationNameInput));
     setReservationNameInput("");
-  }
+  } 
 
   return (
     <div className="App">
@@ -33,8 +33,10 @@ function App() {
             </div>
           </div>
           <div className="reservation-input-container">
-            <input />
-            <button>Add</button>
+            <input 
+              value={reservationNameInput} 
+              onChange={(e) => setReservationNameInput(e.target.value)}/>
+            <button onClick={handleAddReservations}>Add</button>
           </div>
         </div>
         <div className="customer-food-container">
@@ -43,10 +45,8 @@ function App() {
             <div className="customer-foods-container">
               <div className="customer-food"></div>
               <div className="customer-food-input-container">
-                <input 
-                  value={reservationNameInput} 
-                  onChange={(e) => setReservationNameInput(e.target.value)}/>
-                <button onClick={handleAddReservations}>Add</button>
+                <input/>
+                <button>Add</button>
               </div>
             </div>
           </div>
