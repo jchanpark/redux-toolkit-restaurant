@@ -1,9 +1,19 @@
-export default function CustomerCard() {
+interface CustomerCardType {
+  id: string;
+  name: string;
+  food: string[]
+}
+
+export default function CustomerCard({id, name, food}: CustomerCardType) {
   return (
     <div className="customer-food-card-container">
-      <p>Ashely Breton</p>
+      <p>{name}</p>
       <div className="customer-foods-container">
-          <div className="customer-food"></div>
+          <div className="customer-food">
+            {food.map(food => {
+              return <p>{food}</p>
+            })}
+          </div>
           <div className="customer-food-input-container">
             <input/>
             <button>Add</button>
@@ -11,4 +21,4 @@ export default function CustomerCard() {
       </div>
     </div>
   )
-}
+} 
