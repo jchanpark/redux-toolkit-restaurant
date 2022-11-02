@@ -29,7 +29,7 @@ export const customerSlice = createSlice({
     addFoodToCustomer: (state, action: PayloadAction<addFoodToCustomerPayload>) => {
       state.value.forEach(customer => {
         if(customer.id === action.payload.id) {
-          customer.food.push(action.payload)
+          customer.food.push(action.payload.food)
         }
       })
     }
