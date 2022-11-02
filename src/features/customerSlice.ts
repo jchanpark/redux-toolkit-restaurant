@@ -32,8 +32,7 @@ export const customerSlice = createSlice({
           customer.food.push(action.payload.food)
         }
       })
-    }
-    
+    }    
   }
 })
 
