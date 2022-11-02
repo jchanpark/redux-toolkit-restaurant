@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { RootState } from './app/store';
+import CustomerCard from './components/CustomerCard';
 import ReservationCard from './components/ReservationCard';
 import { addReservation } from './features/reservationSlice';
 
@@ -46,6 +47,9 @@ function App() {
           </div>
         </div>
         <div className="customer-food-container">
+          {customers.map(customer => {
+            return <CustomerCard id={customer.id} name={customer.name} food={customer.food}/>
+          })}
           
         </div>
       </div>
